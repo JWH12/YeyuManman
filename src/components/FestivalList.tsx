@@ -38,11 +38,16 @@ const List = () => {
   ) => {
     setIsLoading(true);
 
+    const proxyUrl = "https://api.allorigins.win/get?url=";
+    const targetUrl = encodeURIComponent(
+      `${API_URL}?serviceKey=${API_KEY}&numOfRows=9&pageNo=${pageNumber}&type=json`
+    );
+
     try {
-      const response = await fetch(
-        `${API_URL}?serviceKey=${API_KEY}&numOfRows=9&pageNo=${pageNumber}&type=json`
-      );
-      const data = await response.json();
+      const response = await fetch(proxyUrl + targetUrl);
+      const result = await response.json();
+
+      const data = JSON.parse(result.contents);
 
       if (!data.response || !data.response.body || !data.response.body.items) {
         setIsLoading(false);
