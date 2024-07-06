@@ -3,7 +3,7 @@
 ● 전국의 축제 정보를 확인 할 수 있는 사이트이다.
 
 # 시연 링크
-● [https://yeyumanman-c1d8f.web.app/]
+● https://yeyumanman-c1d8f.web.app/
 
 # 개발 환경
 ### 개발언어
